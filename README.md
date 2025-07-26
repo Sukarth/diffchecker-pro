@@ -2,12 +2,18 @@
 
 A powerful, feature-rich web-based file comparison tool that makes it easy to compare files and see differences with multiple view modes, export options, and advanced features.
 
-![Diff Checker Pro](https://img.shields.io/badge/version-2.0.0-blue.svg)
-![License](https://img.shields.io/badge/license-MIT-green.svg)
-![HTML](https://img.shields.io/badge/HTML-5-orange.svg)
-![CSS](https://img.shields.io/badge/CSS-3-blue.svg)
-![JavaScript](https://img.shields.io/badge/JavaScript-ES6+-yellow.svg)
-![Live Demo](https://img.shields.io/badge/GitHub%20Pages-Live%20Demo-blue?logo=github&labelColor=24292f&style=flat&link=https://sukarth.github.io/diffchecker-pro)
+<div align="center">
+
+[![Diff Checker Pro](https://img.shields.io/badge/version-2.0.0-blue.svg)](CHANGELOG.md)
+[![License](https://img.shields.io/badge/license-MIT-green.svg)](LICENSE)
+[![HTML](https://img.shields.io/badge/HTML-5-orange.svg)]()
+[![CSS](https://img.shields.io/badge/CSS-3-blue.svg)]()
+[![JavaScript](https://img.shields.io/badge/JavaScript-ES6+-yellow.svg)]()
+<br>
+
+[![Live Demo](https://img.shields.io/badge/GitHub%20Pages-Live%20Demo-blue?logo=github&labelColor=24292f&style=flat)](https://sukarth.github.io/diffchecker-pro)
+
+</div>
 
 ![Diff Checker Pro Wide Screenshot](assets/screenshot.png)
 
