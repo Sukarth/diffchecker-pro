@@ -1,0 +1,410 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description"
+        content="Diff Checker Pro - Advanced file comparison tool with multiple diff modes, export options, and modern interface">
+    <meta name="keywords" content="diff, file comparison, text comparison, code comparison, diff tool, web app">
+    <meta name="author" content="Sukarth">
+
+    <!-- Open Graph / Facebook -->
+    <meta property="og:type" content="website">
+    <meta property="og:title" content="Diff Checker Pro">
+    <meta property="og:description"
+        content="Advanced file comparison tool with multiple diff modes, export options, and modern interface">
+    <meta property="og:url" content="https://sukarth.github.io/diffchecker-pro">
+
+    <!-- Twitter -->
+    <meta property="twitter:card" content="summary_large_image">
+    <meta property="twitter:title" content="Diff Checker Pro">
+    <meta property="twitter:description"
+        content="Advanced file comparison tool with multiple diff modes, export options, and modern interface">
+    <title>Diff Checker Pro - Advanced File Comparison Tool</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="manifest" href="manifest.json">
+
+    <!-- Preconnect to external resources -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link rel="preconnect" href="https://cdn.jsdelivr.net">
+</head>
+
+<body>
+    <header>
+        <h1>Diff Checker Pro</h1>
+        <p>Advanced file comparison tool with multiple diff modes and export options.</p>
+        <div class="header-controls">
+            <button id="settingsBtn" class="icon-btn" title="Settings">
+                <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none"
+                    stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                    <circle cx="12" cy="12" r="3"></circle>
+                    <path
+                        d="M19.4 15a1.65 1.65 0 0 0 .33 1.82l.06.06a2 2 0 0 1 0 2.83 2 2 0 0 1-2.83 0l-.06-.06a1.65 1.65 0 0 0-1.82-.33 1.65 1.65 0 0 0-1 1.51V21a2 2 0 0 1-2 2 2 2 0 0 1-2-2v-.09A1.65 1.65 0 0 0 9 19.4a1.65 1.65 0 0 0-1.82.33l-.06.06a2 2 0 0 1-2.83 0 2 2 0 0 1 0-2.83l.06-.06a1.65 1.65 0 0 0 .33-1.82 1.65 1.65 0 0 0-1.51-1H3a2 2 0 0 1-2-2 2 2 0 0 1 2-2h.09A1.65 1.65 0 0 0 4.6 9a1.65 1.65 0 0 0-.33-1.82l-.06-.06a2 2 0 0 1 0-2.83 2 2 0 0 1 2.83 0l.06.06a1.65 1.65 0 0 0 1.82.33H9a1.65 1.65 0 0 0 1 1.51V3a2 2 0 0 1 2-2 2 2 0 0 1 2 2v.09a1.65 1.65 0 0 0 1 1.51 1.65 1.65 0 0 0 1.82-.33l.06-.06a2 2 0 0 1 2.83 0 2 2 0 0 1 0 2.83l-.06.06a1.65 1.65 0 0 0-.33 1.82V9a1.65 1.65 0 0 0 1.51 1H21a2 2 0 0 1 2 2 2 2 0 0 1-2 2h-.09a1.65 1.65 0 0 0-1.51 1z">
+                    </path>
+                </svg>
+            </button>
+        </div>
+    </header>
+    <main>
+        <div class="container">
+            <div class="file-container">
+                <div class="file-header">
+                    <h2>File 1</h2>
+                    <div class="file-info">
+                        <span id="file1-info" class="file-info-text"></span>
+                        <select id="file1-language" class="language-selector" title="Syntax Highlighting">
+                            <option value="auto">Auto Detect</option>
+                            <option value="javascript">JavaScript</option>
+                            <option value="python">Python</option>
+                            <option value="html">HTML</option>
+                            <option value="css">CSS</option>
+                            <option value="json">JSON</option>
+                            <option value="xml">XML</option>
+                            <option value="markdown">Markdown</option>
+                            <option value="text">Plain Text</option>
+                        </select>
+                    </div>
+                </div>
+                <input type="file" id="file1"
+                    accept=".txt,.js,.css,.html,.md,.json,.py,.java,.c,.cpp,.cs,.go,.rb,.php,.rs,.xml,.yaml,.yml">
+                <textarea id="text1" placeholder="Paste content of file 1 here or select a file."
+                    spellcheck="false"></textarea>
+                <div class="textarea-footer">
+                    <span id="text1-stats" class="text-stats"></span>
+                    <div class="undo-redo-group">
+                        <button id="text1-undo" class="icon-btn small" title="Undo (Ctrl+Z)" disabled>
+                            <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24"
+                                fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"
+                                stroke-linejoin="round">
+                                <path d="M3 7v6h6"></path>
+                                <path d="M21 17a9 9 0 0 0-9-9 9 9 0 0 0-6 2.3L3 13"></path>
+                            </svg>
+                        </button>
+                        <button id="text1-redo" class="icon-btn small" title="Redo (Ctrl+Y)" disabled>
+                            <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24"
+                                fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"
+                                stroke-linejoin="round">
+                                <path d="M21 7v6h-6"></path>
+                                <path d="M3 17a9 9 0 0 1 9-9 9 9 0 0 1 6 2.3l3 2.7"></path>
+                            </svg>
+                        </button>
+                    </div>
+                </div>
+            </div>
+            <div class="file-container">
+                <div class="file-header">
+                    <h2>File 2</h2>
+                    <div class="file-info">
+                        <span id="file2-info" class="file-info-text"></span>
+                        <select id="file2-language" class="language-selector" title="Syntax Highlighting">
+                            <option value="auto">Auto Detect</option>
+                            <option value="javascript">JavaScript</option>
+                            <option value="python">Python</option>
+                            <option value="html">HTML</option>
+                            <option value="css">CSS</option>
+                            <option value="json">JSON</option>
+                            <option value="xml">XML</option>
+                            <option value="markdown">Markdown</option>
+                            <option value="text">Plain Text</option>
+                        </select>
+                    </div>
+                </div>
+                <input type="file" id="file2"
+                    accept=".txt,.js,.css,.html,.md,.json,.py,.java,.c,.cpp,.cs,.go,.rb,.php,.rs,.xml,.yaml,.yml">
+                <textarea id="text2" placeholder="Paste content of file 2 here or select a file."
+                    spellcheck="false"></textarea>
+                <div class="textarea-footer">
+                    <span id="text2-stats" class="text-stats"></span>
+                    <div class="undo-redo-group">
+                        <button id="text2-undo" class="icon-btn small" title="Undo (Ctrl+Z)" disabled>
+                            <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24"
+                                fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"
+                                stroke-linejoin="round">
+                                <path d="M3 7v6h6"></path>
+                                <path d="M21 17a9 9 0 0 0-9-9 9 9 0 0 0-6 2.3L3 13"></path>
+                            </svg>
+                        </button>
+                        <button id="text2-redo" class="icon-btn small" title="Redo (Ctrl+Y)" disabled>
+                            <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24"
+                                fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"
+                                stroke-linejoin="round">
+                                <path d="M21 7v6h-6"></path>
+                                <path d="M3 17a9 9 0 0 1 9-9 9 9 0 0 1 6 2.3l3 2.7"></path>
+                            </svg>
+                        </button>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="controls">
+            <div class="control-group">
+                <button id="compareBtn" class="primary-btn">
+                    <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none"
+                        stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                        <path d="M18 6 6 18"></path>
+                        <path d="M6 6l12 12"></path>
+                    </svg>
+                    Compare
+                </button>
+                <button id="clearBtn" class="secondary-btn">
+                    <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none"
+                        stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                        <path d="M3 6h18"></path>
+                        <path d="M19 6v14c0 1-1 2-2 2H7c-1 0-2-1-2-2V6"></path>
+                        <path d="M8 6V4c0-1 1-2 2-2h4c1 0 2 1 2 2v2"></path>
+                    </svg>
+                    Clear
+                </button>
+                <button id="swapBtn" class="secondary-btn" title="Swap Files">
+                    <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none"
+                        stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                        <path d="M16 3h5v5"></path>
+                        <path d="M4 20 21 3"></path>
+                        <path d="M21 16v5h-5"></path>
+                        <path d="M15 15l6 6"></path>
+                        <path d="M4 4l5 5"></path>
+                    </svg>
+                </button>
+            </div>
+
+            <div class="toggle-container">
+                <span>Unified</span>
+                <label class="switch">
+                    <input type="checkbox" id="viewToggle">
+                    <span class="slider round"></span>
+                </label>
+                <span>Side-by-Side</span>
+            </div>
+
+            <div class="diff-level-container">
+                <label><input type="radio" name="diff-level" value="lines" checked> Line-level</label>
+                <label><input type="radio" name="diff-level" value="words"> Word-level</label>
+                <label><input type="radio" name="diff-level" value="chars"> Character-level</label>
+            </div>
+
+            <div class="control-group">
+                <div class="checkbox-group">
+                    <label class="checkbox-label">
+                        <input type="checkbox" id="ignoreWhitespace"> Ignore Multiple Whitespace
+                    </label>
+                    <label class="checkbox-label">
+                        <input type="checkbox" id="ignoreCase"> Ignore Case
+                    </label>
+                </div>
+            </div>
+        </div>
+        <div id="diff-container">
+            <div class="diff-header">
+                <h2>Differences</h2>
+                <div class="diff-controls">
+                    <div class="search-container">
+                        <input type="text" id="searchInput" placeholder="Search in diff..." />
+                        <button id="searchBtn" class="icon-btn" title="Search">
+                            <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24"
+                                fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"
+                                stroke-linejoin="round">
+                                <circle cx="11" cy="11" r="8"></circle>
+                                <path d="M21 21l-4.35-4.35"></path>
+                            </svg>
+                        </button>
+                        <div id="searchResults" class="search-results"></div>
+                    </div>
+                    <div id="diff-stats"></div>
+                    <div class="action-buttons">
+                        <button id="exportBtn" class="icon-btn" title="Export">
+                            <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24"
+                                fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"
+                                stroke-linejoin="round">
+                                <path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"></path>
+                                <polyline points="7,10 12,15 17,10"></polyline>
+                                <line x1="12" y1="15" x2="12" y2="3"></line>
+                            </svg>
+                        </button>
+                        <button id="shareBtn" class="icon-btn" title="Share URL">
+                            <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24"
+                                fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"
+                                stroke-linejoin="round">
+                                <circle cx="18" cy="5" r="3"></circle>
+                                <circle cx="6" cy="12" r="3"></circle>
+                                <circle cx="18" cy="19" r="3"></circle>
+                                <line x1="8.59" y1="13.51" x2="15.42" y2="17.49"></line>
+                                <line x1="15.41" y1="6.51" x2="8.59" y2="10.49"></line>
+                            </svg>
+                        </button>
+                        <button id="copyBtn" class="icon-btn" title="Copy to Clipboard">
+                            <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24"
+                                fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"
+                                stroke-linejoin="round">
+                                <rect x="9" y="9" width="13" height="13" rx="2" ry="2"></rect>
+                                <path d="M5 15H4a2 2 0 0 1-2-2V4a2 2 0 0 1 2-2h9a2 2 0 0 1 2 2v1"></path>
+                            </svg>
+                        </button>
+                    </div>
+                </div>
+            </div>
+            <div class="loading-spinner" id="loadingSpinner" style="display: none;">
+                <div class="spinner"></div>
+                <span>Processing differences...</span>
+            </div>
+            <div id="diff-output" class="view"></div>
+            <div id="diff-output-side-by-side" class="view" style="display: none;">
+                <div class="side">
+                    <div class="side-header">File 1</div>
+                    <div class="side-content"></div>
+                </div>
+                <div class="side">
+                    <div class="side-header">File 2</div>
+                    <div class="side-content"></div>
+                </div>
+            </div>
+        </div>
+    </main>
+
+    <!-- Settings Modal -->
+    <div id="settingsModal" class="modal">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h3>Settings</h3>
+                <button class="close-btn" id="closeSettings">&times;</button>
+            </div>
+            <div class="modal-body">
+                <div class="setting-group">
+                    <label>Dark Mode:</label>
+                    <label class="switch">
+                        <input type="checkbox" id="darkModeToggle">
+                        <span class="slider round"></span>
+                    </label>
+                </div>
+                <div class="setting-group">
+                    <label>Font Size:</label>
+                    <select id="fontSizeSelect">
+                        <option value="12">12px</option>
+                        <option value="14" selected>14px</option>
+                        <option value="16">16px</option>
+                        <option value="18">18px</option>
+                        <option value="20">20px</option>
+                    </select>
+                </div>
+                <div class="setting-group">
+                    <label>Tab Size:</label>
+                    <select id="tabSizeSelect">
+                        <option value="2">2 spaces</option>
+                        <option value="4" selected>4 spaces</option>
+                        <option value="8">8 spaces</option>
+                    </select>
+                </div>
+                <div class="setting-group">
+                    <label>Word Wrap:</label>
+                    <label class="switch">
+                        <input type="checkbox" id="wordWrapToggle">
+                        <span class="slider round"></span>
+                    </label>
+                </div>
+                <div class="setting-group">
+                    <label>Show Line Numbers:</label>
+                    <label class="switch">
+                        <input type="checkbox" id="lineNumbersToggle" checked>
+                        <span class="slider round"></span>
+                    </label>
+                </div>
+                <div class="setting-group">
+                    <label>Auto Compare:</label>
+                    <label class="switch">
+                        <input type="checkbox" id="autoCompareToggle">
+                        <span class="slider round"></span>
+                    </label>
+                </div>
+                <div class="setting-group" style="text-align: center; margin-top: 1.5rem;">
+                    <button id="resetSettingsBtn" class="primary-btn">Reset Settings</button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Export Modal -->
+    <div id="exportModal" class="modal">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h3>Export Diff</h3>
+                <button class="close-btn" id="closeExport">&times;</button>
+            </div>
+            <div class="modal-body">
+                <div class="export-options">
+                    <button id="exportHtml" class="export-btn">
+                        <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none"
+                            stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                            <polyline points="16,18 22,12 16,6"></polyline>
+                            <polyline points="8,6 2,12 8,18"></polyline>
+                        </svg>
+                        Export as HTML
+                    </button>
+                    <button id="exportTxt" class="export-btn">
+                        <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none"
+                            stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                            <path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"></path>
+                            <polyline points="14,2 14,8 20,8"></polyline>
+                            <line x1="16" y1="13" x2="8" y2="13"></line>
+                            <line x1="16" y1="17" x2="8" y2="17"></line>
+                            <polyline points="10,9 9,9 8,9"></polyline>
+                        </svg>
+                        Export as Text
+                    </button>
+                    <button id="exportJson" class="export-btn">
+                        <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none"
+                            stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                            <path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"></path>
+                            <polyline points="14,2 14,8 20,8"></polyline>
+                            <line x1="10" y1="12" x2="14" y2="12"></line>
+                            <line x1="10" y1="16" x2="14" y2="16"></line>
+                        </svg>
+                        Export as JSON
+                    </button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Keyboard Shortcuts Info -->
+    <div id="shortcutsInfo" class="shortcuts-info">
+        <div class="shortcut-item">
+            <kbd>Ctrl</kbd> + <kbd>Enter</kbd> - Compare
+        </div>
+        <div class="shortcut-item">
+            <kbd>Ctrl</kbd> + <kbd>K</kbd> - Clear
+        </div>
+        <div class="shortcut-item">
+            <kbd>Ctrl</kbd> + <kbd>S</kbd> - Export
+        </div>
+        <div class="shortcut-item">
+            <kbd>Ctrl</kbd> + <kbd>F</kbd> - Search
+        </div>
+    </div>
+
+    <!-- Footer -->
+    <footer>
+        <div class="footer-content">
+            <div class="footer-left">
+                <p>Made with ❤️ by Sukarth</p>
+            </div>
+            <div class="footer-right">
+                <a href="https://github.com/sukarth/diffchecker-pro" target="_blank" rel="noopener noreferrer"
+                    title="View on GitHub">
+                    <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none"
+                        stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                        <path
+                            d="M9 19c-5 1.5-5-2.5-7-3m14 6v-3.87a3.37 3.37 0 0 0-.94-2.61c3.14-.35 6.44-1.54 6.44-7A5.44 5.44 0 0 0 20 4.77 5.07 5.07 0 0 0 19.91 1S18.73.65 16 2.48a13.38 13.38 0 0 0-7 0C6.27.65 5.09 1 5.09 1A5.07 5.07 0 0 0 5 4.77a5.44 5.44 0 0 0-1.5 3.78c0 5.42 3.3 6.61 6.44 7A3.37 3.37 0 0 0 9 18.13V22">
+                        </path>
+                    </svg>
+                </a>
+                <span class="version">v1.2.0</span>
+            </div>
+        </div>
+    </footer>
+
+    <script src="https://cdn.jsdelivr.net/npm/diff@5.1.0/dist/diff.min.js"></script>
+    <script src="script.js"></script>
+</body>
+
+</html>

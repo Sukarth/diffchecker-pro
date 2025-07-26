@@ -1,0 +1,68 @@
+{
+    "name": "diffchecker-pro",
+    "version": "2.0.0",
+    "description": "A powerful, feature-rich web-based file comparison tool with multiple diff modes, export options, and advanced features",
+    "main": "index.html",
+    "scripts": {
+        "start": "npx http-server -p 8080 -o",
+        "dev": "npx http-server -p 8080 -o --cors",
+        "build": "echo 'No build process needed - pure HTML/CSS/JS'",
+        "test": "echo 'Tests will be added in future versions'",
+        "lint": "echo 'Linting will be added in future versions'"
+    },
+    "repository": {
+        "type": "git",
+        "url": "https://github.com/Sukarth/diffchecker-pro.git"
+    },
+    "keywords": [
+        "diff",
+        "file-comparison",
+        "diff-tool",
+        "text-comparison",
+        "code-comparison",
+        "web-app",
+        "javascript",
+        "html",
+        "css",
+        "diff-viewer",
+        "file-diff",
+        "text-diff",
+        "comparison-tool",
+        "developer-tools",
+        "productivity"
+    ],
+    "author": {
+        "name": "Sukarth Acharya",
+        "url": "https://github.com/Sukarth"
+    },
+    "license": "MIT",
+    "bugs": {
+        "url": "https://github.com/Sukarth/diffchecker-pro/issues"
+    },
+    "homepage": "https://github.com/Sukarth/diffchecker-pro#readme",
+    "engines": {
+        "node": ">=14.0.0",
+        "npm": ">=6.0.0"
+    },
+    "browserslist": [
+        "Chrome >= 80",
+        "Firefox >= 75",
+        "Safari >= 13",
+        "Edge >= 80"
+    ],
+    "devDependencies": {
+        "http-server": "^14.1.1"
+    },
+    "files": [
+        "index.html",
+        "style.css",
+        "script.js",
+        "README.md",
+        "LICENSE",
+        "CHANGELOG.md"
+    ],
+    "funding": {
+        "type": "github",
+        "url": "https://github.com/sponsors/Sukarth"
+    }
+}
