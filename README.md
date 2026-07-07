@@ -205,13 +205,18 @@ This project is licensed under the MIT License - see the [LICENSE](LICENSE) file
 ![GitHub last commit](https://img.shields.io/github/last-commit/Sukarth/diffchecker-pro)
 
 
-## 🌟 Show Your Support
+## 💖 Support
 
-If you find this project helpful, please consider:
+If this project helps or saves you time, consider supporting my work, as it keeps projects like this free, open source, and maintained:
+
+[![GitHub Sponsors](https://img.shields.io/badge/GitHub%20Sponsors-%E2%9D%A4-EA4AAA?logo=githubsponsors&logoColor=white)](https://github.com/sponsors/Sukarth)
+[![Ko-fi](https://img.shields.io/badge/Ko--fi-Support-FF5E5B?logo=kofi&logoColor=white)](https://ko-fi.com/sukarth)
+[![Buy Me a Coffee](https://img.shields.io/badge/Buy%20Me%20a%20Coffee-☕-FFDD00?logoColor=black)](https://buymeacoffee.com/sukarth)
+
+Can't donate? Please consider:
 - ⭐ **Starring the repository**
 - 🐦 **Sharing on social media**
 - 📝 **Writing a review or blog post**
-- ☕ **Buying me a coffee** (link coming soon!)
 
 ---
 
